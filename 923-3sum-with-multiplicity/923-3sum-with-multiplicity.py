@@ -11,6 +11,11 @@ class Solution:
         n=len(arr)
 
         while(k<n-2):
+            if arr[k]>target:
+                break
+            if k!=0 and arr[k-1]==arr[k]:
+                k+=1
+                continue
             i, j = k+1, n-1
             while(i<j):
                 if arr[i]+arr[j]+arr[k]==target:
